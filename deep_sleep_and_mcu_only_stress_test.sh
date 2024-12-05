@@ -19,8 +19,8 @@ do
         sleep_duration=$(($RANDOM % 100))
         sleep_duration=$((sleep_duration+5))
         echo sleep for $sleep_duration seconds on `date`;
-        rtcwake -s $sleep_duration -m mem 
-        echo "resumed" $1 "time on" `date`
-        i=$((i+5))
+        rtcwake -s $sleep_duration -m mem
+        echo "resumed" $i "time on" `date`
+        i=$((i+1))
         sleep 5
 done
