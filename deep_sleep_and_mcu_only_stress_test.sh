@@ -6,7 +6,7 @@ deep_sleep_latency=150
 while :
 do
         resume_latency=$((($RANDOM % deep_sleep_latency) + mcu_only_latency))
-        resume_latency_us = $((resume_latency*1000))
+        resume_latency_us=$((resume_latency*1000))
         echo $resume_latency_us > /sys/devices/system/cpu/cpu0/power/pm_qos_resume_latency_us
         if [ "$resume_latency" -gt "9" ] && [ "$resume_latency" -lt "101" ]
         then
